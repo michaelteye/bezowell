@@ -1,0 +1,11 @@
+export enum TRANSACTION_TYPE {
+  DEBIT = 'DEBIT',
+  CREDIT = 'CREDIT',
+  DEPOSIT = 'DEPOSIT',
+  WITHDRAWAL = 'WITHDRAWAL',
+  TRANSFER = 'TRANSFER',
+  INVESTMENT = 'INVESTMENT',
+  NOT_SPECIFIED = 'not_specified',
+  ADMIN_TRANSFER = 'admin_transfer',
+  USER_TRANSFER = 'user_transfer',
+}

@@ -1,0 +1,3 @@
+export enum FEE_TYPE {
+  EARLY_WITHDRAWAL = 'EARLY_WITHDRAWAL'
+}
