@@ -23,8 +23,7 @@ export class StreakService{
             where: {
                 transactionType : TRANSACTION_TYPE.DEPOSIT, 
                 createdAt:Between( this.getStartOfWeek(), this.getEndOfWeek()) 
-                
-
+        
           },
           
         

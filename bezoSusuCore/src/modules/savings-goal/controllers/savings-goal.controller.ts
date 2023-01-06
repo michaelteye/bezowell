@@ -40,7 +40,7 @@ export class SavingsGoalController {
     type: SavingsGoalDto,
   })
   async create(@Body() request: SavingsGoalInputDto): Promise<SavingsGoalDto> {
-    return await this.service.create(request);
+    return await this.service.create(request)
   }
 
   @RoleAuth(AuthUserRole.User)
@@ -92,26 +92,24 @@ export class SavingsGoalController {
 
   @RoleAuth(AuthUserRole.User)
   @Delete(':id')
-  @ApiParam({ name: 'id', required: true, type: String })
+  @ApiParam({ name:'id', required: true, type: String })
   @ApiResponse({
     status: 200,
   })
-  async delete(@Param() params: any): Promise<void> {
+  async delete(@Param() params: any): Promise<void>{
     if (params.id && !isUUID(params.id))
       throw new Error(
         `Invalid id, UUID format expected but received ${params.id}`,
       );
     this.service.delete(params.id);
-  }
-
-
+}
   @RoleAuth(AuthUserRole.User)
   @Get()
   @ApiResponse({
-    status: 201,
+    status:201,
     type: [SavingsGoalDto],
   })
-  async getAll(): Promise<SavingsGoalDto[]> {
+  async getAll(): Promise<SavingsGoalDto[]>{
     return (await this.service.all()) as SavingsGoalDto[];
   }
 }

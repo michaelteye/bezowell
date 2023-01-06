@@ -135,33 +135,23 @@ export class SavingsGoalService {
     return this.em.save(savingsGoal) as unknown as SavingsGoalDto;
   }
 
-  // async updateFavourite(id: string, input: { isFavourite: boolean }): Promise<SavingsGoalDto> {
-  //   const savingsGoal: SavingsGoalEntity | SavingsGoalDto = await this.get(id);
-  //   if (!savingsGoal) {
-  //     throw new HttpException('AccountType not found', 404);
-  //   }
-  //   savingsGoal.isFavorite = input.isFavourite
-  //   return this.em.save(savingsGoal) as unknown as SavingsGoalDto;
-  // }
 
-  // delete savings goal
   async delete(id: string): Promise<SavingsGoalDto> {
     const savingsGoal: SavingsGoalEntity | SavingsGoalDto = await this.get(id);
-    if (!savingsGoal) {
+    if (!savingsGoal){
       throw new HttpException('Savings Goal not found', 404);
     }
-    if (savingsGoal.goalStatus == GOAL_STATUS.TERMINATED) {
+    if (savingsGoal.goalStatus == GOAL_STATUS.TERMINATED){
       throw new HttpException('This savings goal cannot be altered', 404);
     }
     savingsGoal.goalStatus = GOAL_STATUS.TERMINATED;
     const ctx = getAppContextALS<AppRequestContext>();
     const primaryAccount = await this.accountService.getUserPrimaryAccount({
       userId: ctx.authUser.userId,
-    });
-
-    // GetAccount by savings goal
+});
+// GetAccount by savings goal
     const secondaryAccount = await this.getSavingsGoalById(id);
-    const userSavingGoalAccount = await this.em.findOne(AccountEntity, {
+    const userSavingGoalAccount = await this.em.findOne(AccountEntity,{
       where: { id: secondaryAccount.accountId },
     });
     console.log('primaryAccount', primaryAccount);

@@ -18,7 +18,8 @@ export class GoalTypeDto {
   name: string;
 }
 
-export class GoalTypeInputDto extends OmitType(GoalTypeDto, ['id']) {
+export class 
+GoalTypeInputDto extends OmitType(GoalTypeDto, ['id']) {
   @IsString()
   @ApiProperty({
     description: 'Account name',

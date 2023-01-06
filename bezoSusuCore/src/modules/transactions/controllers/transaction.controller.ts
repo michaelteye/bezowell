@@ -37,6 +37,7 @@ export class TransactionController {
 
   @RoleAuth(AuthUserRole.User)
   @Post('/deposit')
+
   @ApiResponse({
     status: 201,
     description: 'Transaction Initiated Successfully.',

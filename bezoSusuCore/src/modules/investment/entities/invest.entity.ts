@@ -78,25 +78,3 @@ export class InvestmentEntity extends AbstractEntity {
   // link investment package
 }
 
-// {
-//     "_id": "15e5e4b1-f811-4a73-ad14-5a86dddb2744",
-//     "amount": 1000,
-//     "period": 5,
-//     "ref": "500015",
-//     "startDate": "2022-06-27",
-//     "endDate": "2023-06-27",
-//     "user_id": "41dbd50b957608041f862739fe0ac4c72a35a3f9",
-//     "investment_account_id": "0dec0be9-647f-44a9-9be1-80a7aacbf21e",
-//     "status": "active",
-//     "package_id": "73417af7-b2e7-4a57-8d58-689b1a0e7109",
-//     "createdAt": {
-//       "$date": {
-//         "$numberLong": "1656339810888"
-//       }
-//     },
-//     "updatedAt": {
-//       "$date": {
-//         "$numberLong": "1656339810888"
-//       }
-//     }
-//   }
