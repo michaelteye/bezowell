@@ -66,12 +66,4 @@ export class InvestmentTypeService {
         }
         await this.em.delete(InvestmentPackageEntity, id);
     }
-
-    // async allSavingsGoalTypes(): Promise<InvestmentTypeDto[]> {
-    //     const goalTypes = await this.InvestmentPackageRepository.find({
-    //         where: { name: Not('Primary'), status: STATUS.active },
-    //     });
-
-    //     return goalTypes as InvestmentTypeDto[];
-    // }
 }
